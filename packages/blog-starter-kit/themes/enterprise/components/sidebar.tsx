@@ -64,11 +64,11 @@ function PublicationSidebar(props: Props) {
 					</div>
 
 					<div className="py-10 pl-8 pr-4">
-						<h2 className="mb-4 text-sm font-semibold uppercase text-slate-500 dark:text-slate-400">
+						<h2 className="mb-4 text-sm font-semibold uppercase text-white dark:text-white">
 							Blog menu
 						</h2>
 						<section className="mb-10">
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-white">
+							<ul className="flex flex-col gap-2 text-white dark:text-white">
 								<li>
 									<Link
 										href="/"
@@ -91,7 +91,7 @@ function PublicationSidebar(props: Props) {
 						</section>
 
 						{hasSocialLinks && (
-							<h2 className="mb-4 text-sm font-semibold uppercase leading-6 text-slate-500 dark:text-slate-400">
+							<h2 className="mb-4 text-sm font-semibold uppercase leading-6 text-white dark:text-white">
 								Blog socials
 							</h2>
 						)}

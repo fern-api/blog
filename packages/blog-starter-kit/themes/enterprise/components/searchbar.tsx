@@ -81,7 +81,7 @@ export const Search = () => {
 			>
 				<div className="flex flex-col gap-1">
 					<strong className="text-base">{post.title}</strong>
-					<span className="text-slate-600 dark:text-neutral-300">
+					<span className="text-white dark:text-neutral-300">
 						{post.brief.length > 140 ? post.brief.substring(0, 140) + '…' : post.brief}
 					</span>
 				</div>
@@ -116,7 +116,7 @@ export const Search = () => {
 			{query && (
 				<>
 					{isSearching && (
-						<div className="top-100 absolute left-0 z-10 mt-1 flex w-full flex-col items-stretch overflow-hidden rounded-lg border bg-white p-1 text-left text-slate-900 shadow-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
+						<div className="top-100 absolute left-0 z-10 mt-1 flex w-full flex-col items-stretch overflow-hidden rounded-lg border bg-white p-1 text-left text-white shadow-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
 							<div className="flex animate-pulse flex-col gap-1 p-4">
 								<div className="h-8 w-full rounded-lg bg-slate-100 dark:bg-neutral-800"></div>
 								<div className="h-4 w-full rounded-lg bg-slate-100 dark:bg-neutral-800"></div>
@@ -135,8 +135,8 @@ export const Search = () => {
 						</div>
 					)}
 					{searchResults.length > 0 && !isSearching && (
-						<div className="top-100 absolute left-0 z-10 mt-1 flex w-full flex-col items-stretch overflow-hidden rounded-lg border bg-white p-1 text-left text-slate-900 shadow-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
-							<h3 className="px-4 py-2 font-medium text-slate-500 dark:text-neutral-400">
+						<div className="top-100 absolute left-0 z-10 mt-1 flex w-full flex-col items-stretch overflow-hidden rounded-lg border bg-white p-1 text-left text-white shadow-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50">
+							<h3 className="px-4 py-2 font-medium text-white dark:text-neutral-400">
 								Found {searchResults.length} results
 							</h3>
 							<hr className="dark:border-neutral-800" />

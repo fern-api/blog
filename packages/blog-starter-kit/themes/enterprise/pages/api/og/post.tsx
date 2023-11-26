@@ -8,23 +8,23 @@ export const config = {
 };
 
 const fontRegular = fetch(
-	new URL('../../../assets/PlusJakartaSans-Regular.ttf', import.meta.url),
+	new URL('../../../assets/GT-Planar-Light.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const fontMedium = fetch(
-	new URL('../../../assets/PlusJakartaSans-Medium.ttf', import.meta.url),
+	new URL('../../../assets/GT-Planar-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const fontSemiBold = fetch(
-	new URL('../../../assets/PlusJakartaSans-SemiBold.ttf', import.meta.url),
+	new URL('../../../assets/GT-Planar-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
-const fontBold = fetch(new URL('../../../assets/PlusJakartaSans-Bold.ttf', import.meta.url)).then(
+const fontBold = fetch(new URL('../../../assets/GT-Planar-Regular.ttf', import.meta.url)).then(
 	(res) => res.arrayBuffer(),
 );
 
 const fontExtraBold = fetch(
-	new URL('../../../assets/PlusJakartaSans-ExtraBold.ttf', import.meta.url),
+	new URL('../../../assets/GT-Planar-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
@@ -67,17 +67,17 @@ export default async function handler(req: NextRequest) {
 		(
 			<div
 				style={{
-					fontFamily: '"Plus Jakarta Sans"',
+					fontFamily: '"GT Planar"',
 					backgroundColor: bannerBackground,
 				}}
 				tw="relative flex h-full w-full flex-col p-8 subpixel-antialiased"
 			>
-				{/* if blog is set to open in dark mode, then change text-slate-900 to text-white and change bg-white to bg-black */}
+				{/* if blog is set to open in dark mode, then change text-white to text-white and change bg-white to bg-black */}
 				<div
 					tw={`relative flex flex-col items-center p-10 ${
 						isDefaultModeDark ? 'bg-black' : 'bg-white'
 					} ${
-						isDefaultModeDark ? 'text-white' : 'text-slate-900'
+						isDefaultModeDark ? 'text-white' : 'text-white'
 					} h-full w-full rounded-xl shadow-md`}
 				>
 					<div tw="absolute -top-px -left-px -right-px -bottom-px rounded-xl border-2 border-black/5" />

@@ -42,8 +42,8 @@ export default function Post({ series, publication, posts }: Props) {
 						} grid grid-cols-4 pt-5 md:gap-5`}
 					>
 						<div className="col-span-full flex flex-col gap-1 md:col-span-2 lg:col-span-3">
-							<p className="font-bold uppercase text-slate-500 dark:text-neutral-400">Series</p>
-							<h1 className="text-4xl font-bold text-slate-900 dark:text-neutral-50">
+							<p className="font-bold uppercase text-white dark:text-neutral-400">Series</p>
+							<h1 className="text-4xl font-bold text-white dark:text-neutral-50">
 								{series.name}
 							</h1>
 							<div

@@ -26,6 +26,7 @@
 		"react-waypoint": "^10.3.0",
 		"remark": "^14.0.2",
 		"remark-html": "^15.0.1",
+		"styled-components": "^6.1.1",
 		"uuid": "^9.0.1"
 	},
 	"devDependencies": {
@@ -42,6 +43,7 @@
 		"@types/react-dom": "^18.0.6",
 		"@types/uuid": "^9.0.5",
 		"autoprefixer": "^10.4.7",
+		"babel-plugin-styled-components": "^2.1.4",
 		"concurrently": "^8.2.1",
 		"eslint": "^8.51.0",
 		"postcss": "^8.4.14"

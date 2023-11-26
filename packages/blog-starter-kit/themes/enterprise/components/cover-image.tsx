@@ -20,6 +20,7 @@ export const CoverImage = ({ title, src, slug, priority = false }: Props) => {
 				fill
 				unoptimized
 				priority={priority}
+				style={{ border: 'rgb(22, 238, 157) 1px solid' }}
 			/>
 		</div>
 	);

@@ -12,7 +12,10 @@ export const Layout = ({ children }: Props) => {
 		<>
 			<Meta />
 			<Scripts />
-			<div className="min-h-screen bg-white dark:bg-neutral-950">
+			<div
+				className="min-h-screen dark:bg-neutral-950"
+				style={{ backgroundImage: 'url(/assets/svgs/grid.svg)', background: 'contain no-repeat' }}
+			>
 				<main>{children}</main>
 			</div>
 			<Analytics />

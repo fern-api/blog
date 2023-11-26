@@ -1,5 +1,6 @@
 import { resizeImage } from '@starter-kit/utils/image';
 import Link from 'next/link';
+import styled from 'styled-components';
 import { DEFAULT_COVER } from '../utils/const';
 import { CoverImage } from './cover-image';
 import { DateFormatter } from './date-formatter';
@@ -16,7 +17,7 @@ export const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
 	const postURL = `/${slug}`;
 
 	return (
-		<section className="grid grid-cols-1 gap-5">
+		<HeroPostSection className="grid grid-cols-1 gap-5">
 			<div className="col-span-1">
 				<CoverImage
 					title={title}
@@ -26,7 +27,7 @@ export const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
 				/>
 			</div>
 			<div className="col-span-1 flex flex-col gap-2">
-				<h1 className="text-xl font-bold leading-snug text-slate-800 dark:text-neutral-50 lg:text-3xl">
+				<h1 className="text-xl font-bold leading-snug text-white dark:text-neutral-50 lg:text-3xl">
 					<Link
 						href={postURL}
 						className="hover:text-primary-600 dark:hover:text-primary-500 leading-tight tracking-tight hover:underline"
@@ -35,14 +36,17 @@ export const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
 					</Link>
 				</h1>
 				<Link href={postURL}>
-					<p className="text-md leading-snug text-slate-500 dark:text-neutral-400">{excerpt}</p>
+					<p className="text-md leading-snug text-slate-400 dark:text-neutral-400">{excerpt}</p>
 				</Link>
-				<div className="text-sm font-semibold text-slate-500 dark:text-neutral-300">
+				<div className="text-sm font-semibold text-slate-400 dark:text-neutral-300">
 					<Link href={postURL}>
 						<DateFormatter dateString={date} />
 					</Link>
 				</div>
 			</div>
-		</section>
+		</HeroPostSection>
 	);
 };
+
+const HeroPostSection = styled.section`
+`;

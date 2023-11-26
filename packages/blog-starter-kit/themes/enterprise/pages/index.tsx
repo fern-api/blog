@@ -126,7 +126,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 
 					{allPosts.length === 0 && (
 						<div className="grid grid-cols-1 py-20 lg:grid-cols-3">
-							<div className="col-span-1 flex flex-col items-center gap-5 text-center text-slate-700 dark:text-neutral-400 lg:col-start-2">
+							<div className="col-span-1 flex flex-col items-center gap-5 text-center text-white dark:text-neutral-400 lg:col-start-2">
 								<div className="w-20">
 									<ArticleSVG clasName="stroke-current" />
 								</div>
@@ -153,9 +153,9 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					</div>
 
 					{allPosts.length > 0 && (
-						<div className="bg-primary-50 grid grid-cols-4 rounded-lg px-5 py-5 dark:bg-neutral-900 md:py-10">
+						<div className=" grid grid-cols-4 rounded-lg px-5 py-5 dark:bg-neutral-900 md:py-10">
 							<div className="col-span-full md:col-span-2 md:col-start-2">
-								<h2 className="text-primary-600 dark:text-primary-500 mb-5 text-center text-lg font-semibold">
+								<h2 className="text-white dark:text-primary-500 mb-5 text-center text-lg font-semibold">
 									Subscribe to our newsletter for updates and changelog.
 								</h2>
 								<SubscribeForm />

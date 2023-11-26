@@ -26,7 +26,7 @@ export const PostComments = () => {
 					picture={comment.author.profilePicture}
 				/>
 				<div className="hashnode-content-style" dangerouslySetInnerHTML={{ __html: content }}></div>
-				<div className="flex flex-row gap-5 font-medium text-slate-600 dark:text-neutral-400">
+				<div className="flex flex-row gap-5 font-medium text-white dark:text-neutral-400">
 					{comment.totalReactions > 1 && (
 						<a href={discussionUrl} target="_blank" rel="noopener noreferrer">
 							{comment.totalReactions} likes
@@ -39,7 +39,7 @@ export const PostComments = () => {
 
 	return (
 		<div className="mx-auto flex w-full max-w-screen-md flex-col gap-5 px-5">
-			<h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-neutral-100">
+			<h3 className="text-xl font-bold tracking-tight text-white dark:text-neutral-100">
 				Comments ({post.comments.totalDocuments})
 			</h3>
 			<Button

@@ -1,0 +1,16 @@
+<script>
+	const modifyLinks = () => {
+		const list = [...document.querySelectorAll('a')];
+		list.map((l) => {
+			if (!(l.href.indexOf('/#') !== -1 && l.href.indexOf('/#') === l.href.length - 2)) {
+				const originalURL = l.href;
+				l.addEventListener('click', () => {
+					window.parent.postMessage({ goTo: originalURL }, '*');
+				});
+				l.href = '#';
+			}
+		});
+		setTimeout(modifyLinks, 100);
+	};
+	setTimeout(modifyLinks, 100);
+</script>

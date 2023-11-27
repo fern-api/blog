@@ -1,16 +1,28 @@
 <script>
+	function replaceSelf(node) {
+		const clone = node.cloneNode(true);
+		node.replaceWith(clone);
+		return clone;
+	}
+
 	const modifyLinks = () => {
 		const list = [...document.querySelectorAll('a')];
-		list.map((l) => {
-			if (!(l.href.indexOf('/#') !== -1 && l.href.indexOf('/#') === l.href.length - 2)) {
-				const originalURL = l.href;
-				l.addEventListener('click', () => {
-					window.parent.postMessage({ goTo: originalURL }, '*');
+		list.map((aTag) => {
+			if (!(aTag.href.indexOf('/#') !== -1 && aTag.href.indexOf('/#') === aTag.href.length - 2)) {
+				const originalURL = aTag.href;
+				const newATag = replaceSelf(aTag);
+				newATag.addEventListener('click', (e) => {
+					//e.preventDefault();
+					const payload = { goTo: originalURL };
+					console.log('passing:', payload);
+					window.parent.postMessage(payload, '*');
+					//return false;
 				});
-				l.href = '#';
+				newATag.href = '#';
+				newATag.target = '_self';
 			}
 		});
-		setTimeout(modifyLinks, 100);
+		//setTimeout(modifyLinks, 100);
 	};
-	setTimeout(modifyLinks, 100);
+	setTimeout(modifyLinks, 500);
 </script>

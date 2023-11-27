@@ -25,8 +25,8 @@ export const PostComments = () => {
 					size={8}
 					picture={comment.author.profilePicture}
 				/>
-				<div className="hashnode-content-style" dangerouslySetInnerHTML={{ __html: content }}></div>
-				<div className="flex flex-row gap-5 font-medium text-white dark:text-neutral-400">
+				<div  dangerouslySetInnerHTML={{ __html: content }}></div>
+				<div className="flex flex-row gap-5 font-medium text-slate-600 dark:text-neutral-400">
 					{comment.totalReactions > 1 && (
 						<a href={discussionUrl} target="_blank" rel="noopener noreferrer">
 							{comment.totalReactions} likes

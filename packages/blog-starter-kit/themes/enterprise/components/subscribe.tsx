@@ -12,7 +12,7 @@ export const Subscribe = () => {
 						label="Subscribe"
 						type="outline"
 						icon={<NewsletterPlusSVG className="w-5 h-5 fill-current" />}
-						className="!bg-white dark:!bg-neutral-950"
+						className="!bg-white dark:!bg-neutral-950 text-slate-800"
 					/>
 				</Popover.Trigger>
 				<Popover.Portal>

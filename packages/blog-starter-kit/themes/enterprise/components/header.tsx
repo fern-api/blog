@@ -25,12 +25,7 @@ export const Header = () => {
 		const handler = (ev: MessageEvent<{ type: string; message: string }>) => {
 			console.log('ev', ev);
 			if ((ev as any)?.data?.goTo) {
-				console.log('message recieved', (ev as any).data.goTo);
-				console.log('changing location!');
 				window.location.href = (ev as any).data.goTo;
-				(window as any).top.location.href = (ev as any).data.goTo;
-				console.log('location changed to: ', window.location.href);
-				console.log('v1.0');
 				return false;
 			}
 		};

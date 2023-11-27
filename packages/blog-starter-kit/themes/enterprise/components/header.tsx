@@ -37,7 +37,7 @@ export const Header = () => {
 
 	return (
 		<iframe
-			src="https://formal-trust-650879.framer.app/header"
+			src="https://buildwithfern.com/header"
 			style={{ height: 82, width: '100%' }}
 		></iframe>
 	);

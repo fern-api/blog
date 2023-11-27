@@ -6,7 +6,7 @@ export const Footer = () => {
 	return (
 		<>
 			<iframe
-				src="https://formal-trust-650879.framer.app/footer"
+				src="https://buildwithfern.com/footer"
 				style={{ height: 368, width: '100%' }}
 			></iframe>
 		</>

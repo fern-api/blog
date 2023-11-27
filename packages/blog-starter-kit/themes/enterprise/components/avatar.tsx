@@ -27,7 +27,7 @@ export const Avatar = ({ username, name, picture, size }: Props) => {
 					alt={name}
 				/>
 			</a>
-			<div className="text-base font-bold text-slate-600 dark:text-neutral-300">
+			<div className="text-base font-bold text-slate-300 dark:text-neutral-300">
 				<a href={`https://hashnode.com/@${username}`} target="_blank" rel="noopener noreferrer">
 					{name}
 				</a>

@@ -27,6 +27,7 @@ export const Header = () => {
 			if ((ev as any)?.data?.goTo) {
 				console.log('message recieved', (ev as any).data.goTo);
 				window.location.href = (ev as any).data.goTo;
+				return false;
 			}
 		};
 
@@ -36,9 +37,6 @@ export const Header = () => {
 	}, []);
 
 	return (
-		<iframe
-			src="https://buildwithfern.com/header"
-			style={{ height: 82, width: '100%' }}
-		></iframe>
+		<iframe src="https://buildwithfern.com/header" style={{ height: 82, width: '100%' }}></iframe>
 	);
 };

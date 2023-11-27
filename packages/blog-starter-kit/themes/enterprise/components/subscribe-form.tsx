@@ -82,13 +82,13 @@ export const SubscribeForm = () => {
 			)}
 			{status === 'success' && (
 				<div className="relative w-full p-2 text-center">
-					<p className="font-bold text-green-600 dark:text-green-500">Subscribed</p>
+					<p className="font-bold text-black">Subscribed</p>
 				</div>
 			)}
 
 			{status === 'error' && (
 				<div className="relative w-full p-2 text-center">
-					<p className="dark:text-red text-red font-bold">Erorr</p>
+					<p className="dark:text-red text-red font-bold">Error</p>
 				</div>
 			)}
 		</>

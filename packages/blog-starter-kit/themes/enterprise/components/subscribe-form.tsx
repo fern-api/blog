@@ -1,17 +1,10 @@
-import request from 'graphql-request';
 import { useRef, useState } from 'react';
-import {
-	SubscribeToNewsletterDocument,
-	SubscribeToNewsletterMutation,
-	SubscribeToNewsletterMutationVariables,
-	SubscribeToNewsletterPayload,
-} from '../generated/graphql';
 import { useAppContext } from './contexts/appContext';
 
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT;
 
 export const SubscribeForm = () => {
-	const [status, setStatus] = useState<SubscribeToNewsletterPayload['status']>();
+	const [status, setStatus] = useState<'ready' | 'success' | 'error'>('ready');
 	const [requestInProgress, setRequestInProgress] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { publication } = useAppContext();
@@ -22,6 +15,33 @@ export const SubscribeForm = () => {
 
 		setRequestInProgress(true);
 
+		/** LOOPS CODE */
+		var formBody = 'userGroup=&email=' + encodeURIComponent(email);
+		fetch('https://app.loops.so/api/newsletter-form/cldhxxa9c0004jq08kogof4x3', {
+			method: 'POST',
+			body: formBody,
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+		})
+			.then((res) => [res.ok, res.json(), res])
+			.then(([ok, dataPromise, res]) => {
+				if (ok) {
+					// If response successful
+					// display success
+					setStatus('success');
+					setRequestInProgress(false);
+				} else {
+					// If response unsuccessful
+					// display error message or response status\
+					setStatus('error');
+					setRequestInProgress(false);
+				}
+			})
+			.catch((error) => {})
+			.finally(() => {});
+		/** END LOOPS CODE */
+		/*
 		try {
 			const data = await request<
 				SubscribeToNewsletterMutation,
@@ -38,16 +58,17 @@ export const SubscribeForm = () => {
 			}
 			setRequestInProgress(false);
 		}
+		*/
 	};
 	return (
 		<>
-			{!status && (
+			{status === 'ready' && (
 				<div className="relative w-full rounded-full bg-white p-2 dark:bg-neutral-950">
 					<input
 						ref={inputRef}
 						type="email"
 						placeholder="john@doe.com"
-						className="focus:outline-green-400 dark:focus:outline-black left-3 top-3 w-full rounded-full p-3 text-base text-black outline-none dark:bg-neutral-950 dark:text-neutral-50"
+						className="left-3 top-3 w-full rounded-full p-3 text-base text-black outline-none focus:outline-green-400 dark:bg-neutral-950 dark:text-neutral-50 dark:focus:outline-black"
 					/>
 					<button
 						disabled={requestInProgress}
@@ -59,14 +80,15 @@ export const SubscribeForm = () => {
 					</button>
 				</div>
 			)}
-			{status === 'PENDING' && (
+			{status === 'success' && (
 				<div className="relative w-full p-2 text-center">
-					<p className="font-bold text-green-600 dark:text-green-500">Almost there!</p>
-					<p className="font-medium text-white dark:text-neutral-300">
-						Check your inbox for a confirmation email and click{' '}
-						<strong>&quot;Confirm and Subscribe&quot;</strong> to complete your subscription. Thanks
-						for joining us!
-					</p>
+					<p className="font-bold text-green-600 dark:text-green-500">Subscribed</p>
+				</div>
+			)}
+
+			{status === 'error' && (
+				<div className="relative w-full p-2 text-center">
+					<p className="dark:text-red text-red font-bold">Erorr</p>
 				</div>
 			)}
 		</>

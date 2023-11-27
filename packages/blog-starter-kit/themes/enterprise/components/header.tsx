@@ -30,6 +30,7 @@ export const Header = () => {
 				window.location.href = (ev as any).data.goTo;
 				(window as any).top.location.href = (ev as any).data.goTo;
 				console.log('location changed to: ', window.location.href);
+				console.log('v1.0');
 				return false;
 			}
 		};

@@ -28,6 +28,7 @@ export const Header = () => {
 				console.log('message recieved', (ev as any).data.goTo);
 				console.log('changing location!');
 				window.location.href = (ev as any).data.goTo;
+				(window as any).top.location.href = (ev as any).data.goTo;
 				console.log('location changed to: ', window.location.href);
 				return false;
 			}
